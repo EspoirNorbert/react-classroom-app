@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { AddStudent } from './AddStudent';
 import { Student } from './Student';
 
 
@@ -24,11 +25,19 @@ export class Classroom extends Component {
         }) )
     }
 
+    handleAdd = nom => {
+        // cretae new student object
+        const newStudent = {id: Date.now() , nom: nom}
+        // reactualiser and add student
+        this.setState({students: [ ...this.state.students,newStudent]})
+    }
+
 
     render() {
     const learners = this.state.students;
       return (
         <div>
+            <AddStudent  handleAdd={this.handleAdd} />
             <h1>La liste des etudiants de  {this.props.nom} </h1>
             { (!learners.length)? <p>Aucun etudiant</p> :  <ul>
                { 
