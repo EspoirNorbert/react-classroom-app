@@ -23,12 +23,14 @@ export class Classroom extends Component {
         <div>
             <h1>La liste des etudiants de  {this.props.nom} </h1>
             <ul>
-               <Student nom={leaners[0].nom} />
-               <Student nom={leaners[1].nom} />
-               <Student nom={leaners[2].nom} />
-               <Student nom={leaners[3].nom} />
+               {
+                   leaners.map(leaner => <Student
+                                key={leaner.id} 
+                                nom={leaner.nom}
+                                          />)
+               }
             </ul>
-            <Student />
+            
         </div>
       )
     };
