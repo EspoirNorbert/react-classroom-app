@@ -5,7 +5,7 @@ import { Classroom } from './Components/Classroom';
 function App() {
   return (
 
-      <Classroom />
+      <Classroom nom='JS Dev' />
   );
 }
 
