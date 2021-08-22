@@ -4,7 +4,6 @@ import { Classroom } from './Components/Classroom';
 
 function App() {
   return (
-
       <Classroom nom='JS Dev' />
   );
 }

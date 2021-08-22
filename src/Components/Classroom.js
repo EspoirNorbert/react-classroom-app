@@ -3,16 +3,30 @@ import { Student } from './Student';
 
 
 export class Classroom extends Component {
+
+    constructor(){
+        super()
+        this.state = {
+            students: [
+                {id:1, nom:'Ogueye Habiba Terrim'},
+                {id:2, nom:'Ouedraogo Luc'},
+                {id:3, nom:'Miraide Augusto Bassam'},
+                {id:4, nom:'Fatou Aissatou Cissé'},
+                {id:5, nom:'Aida Diao'}
+            ]
+        }
+    }
+
     render() {
-      return (
+    const leaners = this.state.students;
+      return ( 
         <div>
             <h1>La liste des etudiants de  {this.props.nom} </h1>
             <ul>
-               <Student nom='Ogueye Habiba Terrim' />
-               <Student nom='Ouedraogo Luc' />
-               <Student nom='Miraide Augusto Bassam' />
-               <Student nom='Fatou Aissatou Cissé' />
-               <Student nom='Aida Diao' />
+               <Student nom={leaners[0].nom} />
+               <Student nom={leaners[1].nom} />
+               <Student nom={leaners[2].nom} />
+               <Student nom={leaners[3].nom} />
             </ul>
             <Student />
         </div>
