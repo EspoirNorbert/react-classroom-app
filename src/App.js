@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { Classroom } from './Components/Classroom';
 

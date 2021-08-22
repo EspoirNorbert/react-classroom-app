@@ -16,20 +16,27 @@ export class Classroom extends Component {
             ]
         }
     }
+    
+
 
     render() {
     const leaners = this.state.students;
-      return ( 
+     if(!leaners.length){
+         return (
+             <div>
+                 <h1>La liste des etudiants de  {this.props.nom} </h1>
+                 <p>Aucun etudiant</p>
+             </div>
+         )
+     }
+      return (
         <div>
             <h1>La liste des etudiants de  {this.props.nom} </h1>
-            <ul>
-               {
-                   leaners.map(leaner => <Student
-                                key={leaner.id} 
-                                nom={leaner.nom}
-                                          />)
+            { (!leaners.length)? <p>Aucun etudiant</p> :  <ul>
+               { 
+                leaners.map(leaner => <Student key={leaner.id} nom={leaner.nom} />) 
                }
-            </ul>
+            </ul> }
             
         </div>
       )
