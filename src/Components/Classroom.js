@@ -6,6 +6,7 @@ export class Classroom extends Component {
 
     constructor(){
         super()
+        this.handleDelete = this.handleDelete.bind(this)
         this.state = {
             students: [
                 {id:1, nom:'Ogueye Habiba Terrim'},
@@ -17,26 +18,24 @@ export class Classroom extends Component {
         }
     }
     
+    handleDelete(id) {
+        this.setState(prevState => ({
+            students: prevState.students.filter(student => student.id !== id)
+        }) )
+    }
 
 
     render() {
-    const leaners = this.state.students;
-     if(!leaners.length){
-         return (
-             <div>
-                 <h1>La liste des etudiants de  {this.props.nom} </h1>
-                 <p>Aucun etudiant</p>
-             </div>
-         )
-     }
+    const learners = this.state.students;
       return (
         <div>
             <h1>La liste des etudiants de  {this.props.nom} </h1>
-            { (!leaners.length)? <p>Aucun etudiant</p> :  <ul>
+            { (!learners.length)? <p>Aucun etudiant</p> :  <ul>
                { 
-                leaners.map(leaner => <Student key={leaner.id} nom={leaner.nom} />) 
+                learners.map(learner => <Student key={learner.id} learner={learner} handleDelete={this.handleDelete  } />) 
                }
-            </ul> }
+            </ul> 
+            }
             
         </div>
       )
