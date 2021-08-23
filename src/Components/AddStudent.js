@@ -21,7 +21,7 @@ export class AddStudent extends Component {
     //render
     render() {
       return (
-        <div>
+        <div className='centrer'  >
             <form onSubmit={this.handleAdd}>
                 <input 
                      name='Nom'
@@ -29,7 +29,7 @@ export class AddStudent extends Component {
                      value={this.state.nom}
                      onChange={this.handleChange}
                 />
-                <input type="submit" value='Ajoutez' />
+                <input style={{flex: '10'}} type="submit" value='Ajoutez' />
             </form>
         </div>
       )

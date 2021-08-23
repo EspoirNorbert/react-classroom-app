@@ -43,7 +43,7 @@ export class Classroom extends Component {
     const learners = this.state.students;
     const isLoading = this.state.isLoading;
       return (
-        <div>
+        <div className='centrer'>
             <AddStudent  handleAdd={this.handleAdd} />
             <h1>La liste des etudiants de  {this.props.nom} </h1>
             { (!learners.length)? <p>Aucun etudiant</p> :  <ul>

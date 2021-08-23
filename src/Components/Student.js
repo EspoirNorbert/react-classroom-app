@@ -9,9 +9,9 @@ export class Student extends Component {
      
     render() {
         return (
-            <div>
+            <div style={{textAlign: 'left', borderBottom:'1px dotted'}} >
                 {this.props.learner.nom}
-                <button onClick={this.props.handleDelete.bind(this, this.props.learner.id)}>X</button>
+                <button style={{ float: "right" }} onClick={this.props.handleDelete.bind(this, this.props.learner.id)}>X</button>
             </div>
         );
     }
